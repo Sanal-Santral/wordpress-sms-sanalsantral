@@ -1,0 +1,351 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sanalsantral-sms-otp\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: sanalsantral-sms-otp\n"
+
+#: sanalsantral-sms-otp/sanalsantral-sms-otp.php:35
+msgid "Sanal Santral SMS OTP needs the Sanal Santral SMS plugin to be active."
+msgstr "Sanal Santral SMS OTP için Sanal Santral SMS eklentisinin etkin olması gerekir."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp.php:30
+msgid "This is not a valid Turkish mobile number."
+msgstr "Geçerli bir Türkiye cep numarası değil."
+
+#. translators: %d: seconds
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp.php:41
+#, php-format
+msgid "Please wait %d second before requesting a new code."
+msgid_plural "Please wait %d seconds before requesting a new code."
+msgstr[0] "Yeni kod istemeden önce lütfen %d saniye bekleyin."
+msgstr[1] "Yeni kod istemeden önce lütfen %d saniye bekleyin."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp.php:60
+msgid "Too many codes were requested for this number. Please try again later."
+msgstr "Bu numara için çok fazla kod istendi. Lütfen daha sonra tekrar deneyin."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp.php:126
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp.php:133
+msgid "The code has expired. Please request a new one."
+msgstr "Kodun süresi doldu. Lütfen yeni kod isteyin."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp.php:146
+msgid "Too many wrong codes. Please request a new one."
+msgstr "Çok fazla hatalı kod girildi. Lütfen yeni kod isteyin."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp.php:149
+msgid "The code is not correct."
+msgstr "Kod hatalı."
+
+#. translators: Default OTP SMS. Keep the {code} placeholder.
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-settings.php:20
+msgid "{site} verification code: {code}"
+msgstr "{site} doğrulama kodunuz: {code}"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-settings.php:57
+msgid "The OTP message must contain {code}; the previous message was kept."
+msgstr "OTP mesajı {code} içermelidir; önceki mesaj korundu."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:131
+msgid ""
+"This account uses SMS two-step login. Use an application password for API "
+"access."
+msgstr "Bu hesap SMS ile iki adımlı giriş kullanıyor. API erişimi için uygulama parolası kullanın."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:225
+msgid "A new code has been sent."
+msgstr "Yeni kod gönderildi."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:253
+msgid "SMS verification"
+msgstr "SMS doğrulama"
+
+#. translators: %s: masked phone number
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:260
+#, php-format
+msgid "Enter the code we sent by SMS to %s."
+msgstr "%s numarasına SMS ile gönderdiğimiz kodu girin."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:264
+msgid "Verification code"
+msgstr "Doğrulama kodu"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:268
+msgid "Verify and log in"
+msgstr "Doğrula ve giriş yap"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:273
+msgid "Send a new code"
+msgstr "Yeni kod gönder"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:275
+msgid "Cancel"
+msgstr "Vazgeç"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:295
+msgid "The SMS verification step expired. Please log in again."
+msgstr "SMS doğrulama adımının süresi doldu. Lütfen tekrar giriş yapın."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-2fa.php:297
+msgid "Too many wrong codes. Please log in again."
+msgstr "Çok fazla hatalı kod girildi. Lütfen tekrar giriş yapın."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:31
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:70
+msgid "OTP & two-step login"
+msgstr "OTP ve iki adımlı giriş"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:31
+msgid "OTP & 2FA"
+msgstr "OTP ve 2FA"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:35
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:78
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:54
+msgid "Sending…"
+msgstr "Gönderiliyor…"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:55
+msgid "Checking…"
+msgstr "Kontrol ediliyor…"
+
+#. translators: %s: link to the gateway settings
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:77
+#, php-format
+msgid ""
+"Enter the gateway credentials on the %s page first. Two-step login stays off "
+"until the gateway is configured."
+msgstr "Önce %s sayfasından servis bilgilerini girin. Servis ayarlanana kadar iki adımlı giriş kapalı kalır."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:84
+msgid ""
+"SS_SMS_2FA_DISABLED is set in wp-config.php: two-step login is switched off "
+"for everyone."
+msgstr "wp-config.php içinde SS_SMS_2FA_DISABLED tanımlı: iki adımlı giriş herkes için kapalı."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:89
+msgid "Two-step login"
+msgstr "İki adımlı giriş"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:92
+msgid "Customers"
+msgstr "Müşteriler"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:94
+msgid "Ask customers for an SMS code after their password"
+msgstr "Müşterilerden paroladan sonra SMS kodu iste"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:95
+msgid ""
+"Applies to every non-administrator with a Turkish mobile number on their "
+"profile or WooCommerce billing address, on wp-login.php and the My Account "
+"login. Users without a mobile number log in with their password only."
+msgstr "Profilinde veya WooCommerce fatura adresinde Türkiye cep numarası olan, yönetici olmayan tüm kullanıcılar için wp-login.php ve Hesabım girişinde geçerlidir. Cep numarası olmayan kullanıcılar yalnızca parolayla giriş yapar."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:99
+msgid "Administrators"
+msgstr "Yöneticiler"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:101
+msgid "Ask administrators for an SMS code after their password"
+msgstr "Yöneticilerden paroladan sonra SMS kodu iste"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:103
+msgid "Lock-out risk."
+msgstr "Kilitlenme riski."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:104
+msgid ""
+"An administrator who cannot receive the SMS (wrong number, no credit on the "
+"gateway, gateway outage) cannot log in. To limit this, the code is only "
+"asked from administrators who verified their number by SMS on their profile."
+msgstr "SMS’i alamayan bir yönetici (hatalı numara, serviste kredi bitmesi, servis kesintisi) giriş yapamaz. Bu riski azaltmak için kod yalnızca numarasını profilinde SMS ile doğrulamış yöneticilerden istenir."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:105
+msgid "Emergency switch: add this to wp-config.php:"
+msgstr "Acil durum anahtarı: wp-config.php dosyasına şunu ekleyin:"
+
+#. translators: %s: masked phone
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:111
+#, php-format
+msgid "Your verified number: %s"
+msgstr "Doğrulanmış numaranız: %s"
+
+#. translators: %s: link to the profile
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:115
+#, php-format
+msgid ""
+"Your number is not verified yet, so this will not affect your own login. "
+"Verify it on %s."
+msgstr "Numaranız henüz doğrulanmadı, bu yüzden kendi girişinizi etkilemez. %s üzerinden doğrulayın."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:116
+msgid "your profile"
+msgstr "profiliniz"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:125
+msgid "Codes"
+msgstr "Kodlar"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:128
+msgid "Message"
+msgstr "Mesaj"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:131
+msgid "Placeholders: {code} (required), {site}, {minutes}."
+msgstr "Değişkenler: {code} (zorunlu), {site}, {minutes}."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:136
+msgid "Code length (digits)"
+msgstr "Kod uzunluğu (hane)"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:137
+msgid "Code valid for (seconds)"
+msgstr "Kod geçerlilik süresi (saniye)"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:138
+msgid "Wrong attempts allowed"
+msgstr "İzin verilen hatalı deneme"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:138
+msgid ""
+"After this many wrong codes the code is burnt and the login must start over."
+msgstr "Bu kadar hatalı denemeden sonra kod geçersiz olur ve girişe baştan başlanır."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:139
+msgid "Wait before a new code (seconds)"
+msgstr "Yeni kod için bekleme (saniye)"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:140
+msgid "Codes per number per hour"
+msgstr "Numara başına saatlik kod sayısı"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:140
+msgid "Protects your SMS credit against abuse. 0 = unlimited."
+msgstr "SMS kredinizi kötüye kullanıma karşı korur. 0 = sınırsız."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:159
+msgid "Try it"
+msgstr "Deneyin"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:160
+msgid "Send yourself a code, then type it in to check the whole round trip."
+msgstr "Kendinize bir kod gönderin, ardından girerek tüm akışı test edin."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:167
+msgid "Mobile phone"
+msgstr "Cep telefonu"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:170
+msgid "Send code"
+msgstr "Kod gönder"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:174
+msgid "Code"
+msgstr "Kod"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:177
+msgid "Verify code"
+msgstr "Kodu doğrula"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:188
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:324
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:340
+msgid "You are not allowed to do this."
+msgstr "Bu işlem için yetkiniz yok."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:199
+msgid "Code is correct. OTP works end to end."
+msgstr "Kod doğru. OTP uçtan uca çalışıyor."
+
+#. translators: %s: phone
+#. translators: %s: masked phone
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:207
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:331
+#, php-format
+msgid "Code sent to %s."
+msgstr "Kod %s numarasına gönderildi."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:230
+msgid ""
+"SMS two-step login is on for administrators, but your number is not "
+"verified, so your account is not protected yet."
+msgstr "Yöneticiler için SMS ile iki adımlı giriş açık, ancak numaranız doğrulanmadığı için hesabınız henüz korunmuyor."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:232
+msgid "Verify your number"
+msgstr "Numaranızı doğrulayın"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:246
+msgid "Verified by SMS"
+msgstr "SMS ile doğrulandı"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:248
+msgid "Not verified"
+msgstr "Doğrulanmadı"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:252
+msgid "Verify again"
+msgstr "Yeniden doğrula"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:252
+msgid "Send verification code"
+msgstr "Doğrulama kodu gönder"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:256
+msgid "Verify"
+msgstr "Doğrula"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:268
+msgid "SMS two-step login"
+msgstr "SMS ile iki adımlı giriş"
+
+#. translators: %s: masked phone
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:273
+#, php-format
+msgid "Active. Login codes go to %s."
+msgstr "Etkin. Giriş kodları %s numarasına gider."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:280
+msgid "Exempt this user from SMS two-step login"
+msgstr "Bu kullanıcıyı SMS ile iki adımlı girişten muaf tut"
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:290
+msgid "Off. Two-step login is not available on this site."
+msgstr "Kapalı. Bu sitede iki adımlı giriş kullanılamıyor."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:293
+msgid "Off. This user is exempt."
+msgstr "Kapalı. Bu kullanıcı muaf."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:298
+msgid "Off. Not enabled for administrators."
+msgstr "Kapalı. Yöneticiler için açılmamış."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:300
+msgid "Off. Verify the mobile number above by SMS to turn it on."
+msgstr "Kapalı. Açmak için yukarıdaki cep numarasını SMS ile doğrulayın."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:303
+msgid "Off. Not enabled for customers."
+msgstr "Kapalı. Müşteriler için açılmamış."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:305
+msgid "Off. No Turkish mobile number on file."
+msgstr "Kapalı. Kayıtlı Türkiye cep numarası yok."
+
+#: sanalsantral-sms-otp/includes/class-ss-sms-otp-admin.php:349
+msgid "Number verified."
+msgstr "Numara doğrulandı."
