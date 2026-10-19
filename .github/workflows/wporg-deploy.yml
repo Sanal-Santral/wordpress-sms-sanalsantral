@@ -1,0 +1,27 @@
+name: Deploy to WordPress.org
+
+# Enable once the plugins are approved on WordPress.org: set the repository
+# variable WPORG_DEPLOY=true and the secrets SVN_USERNAME / SVN_PASSWORD.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    if: vars.WPORG_DEPLOY == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        slug: [sanalsantral-sms, sanalsantral-sms-otp]
+    steps:
+      - uses: actions/checkout@v5
+      - run: bin/build.sh wporg
+      - uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: ${{ matrix.slug }}
+          BUILD_DIR: dist/wporg/${{ matrix.slug }}
+          ASSETS_DIR: .wordpress-org/${{ matrix.slug }}

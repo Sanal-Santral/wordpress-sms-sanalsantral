@@ -1,0 +1,34 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+      - run: php tests/run.php
+      - name: Build
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: bin/build.sh github
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          python3 - > notes.md <<'PY'
+          import json
+          log = json.load(open("dist/github/release.json"))["plugins"]["sanalsantral-sms"]["changelog"]
+          print(log.split("\n= ")[0].split("\n", 1)[-1].strip())
+          PY
+          gh release create "$TAG" dist/github/*.zip dist/github/release.json --title "$TAG" --notes-file notes.md
