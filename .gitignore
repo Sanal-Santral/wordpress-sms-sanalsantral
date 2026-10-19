@@ -1,0 +1,4 @@
+dist/
+demo/.env
+docs/downloads/
+.DS_Store
