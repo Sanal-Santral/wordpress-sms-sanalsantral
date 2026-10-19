@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OTP Eklentisi Kurulum ve Kullanım | Sanal Santral</title>
+<meta name="description" content="Sanal Santral SMS OTP WordPress eklentisinin kurulumu, müşteri ve yönetici için SMS ile iki adımlı giriş, kilitlenme önlemleri ve OTP API'si.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="theme-otp">
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="https://www.sanalsantral.com.tr" aria-label="Sanal Santral"><img src="assets/logo.svg" alt="Sanal Santral"></a>
+    <nav class="site-nav">
+      <a href="sanalsantral-sms.html">SMS Eklentisi</a>
+      <a href="sanalsantral-sms-otp.html">OTP ve 2FA Eklentisi</a>
+      <a href="sanalsantral-sms-otp-kurulum.html" class="active">Kurulum Rehberi</a>
+    </nav>
+    <a class="btn btn-orange btn-sm" href="https://github.com/Sanal-Santral/wordpress-sms-sanalsantral/releases/latest/download/sanalsantral-sms-otp.zip">Eklentiyi İndir</a>
+  </div>
+</header>
+
+<section class="doc-hero">
+  <div class="container">
+    <span class="pill"><span class="dot"></span>Kurulum ve Kullanım Rehberi</span>
+    <h1><span>Sanal Santral SMS OTP</span> WordPress eklentisi</h1>
+    <p>Müşteriler ve yöneticiler için SMS ile iki adımlı giriş, kilitlenme önlemleri ve kendi formlarınız için OTP API'si.</p>
+    <div class="meta"><span>WordPress 7.0 ve 7.1</span><span>PHP 7.4+</span><span>Sanal Santral SMS eklentisi gerekir</span><span>Sürüm 1.0.0</span></div>
+  </div>
+</section>
+
+<div class="container doc">
+  <aside class="toc">
+    <b>İçindekiler</b>
+    <ol>
+      <li><a href="#gereksinimler">Gereksinimler</a></li>
+      <li><a href="#kurulum">Kurulum</a></li>
+      <li><a href="#deneyin">İlk deneme</a></li>
+      <li><a href="#musteri">Müşteri girişinde 2FA</a></li>
+      <li><a href="#yonetici">Yönetici girişinde 2FA</a></li>
+      <li><a href="#kilitlenme">Kilitlenme önlemleri</a></li>
+      <li><a href="#giris">Giriş akışı</a></li>
+      <li><a href="#ayarlar">Kod ayarları</a></li>
+      <li><a href="#api">Geliştirici OTP API'si</a></li>
+      <li><a href="#sorun">Sorun giderme</a></li>
+      <li><a href="#kaldirma">Kaldırma</a></li>
+    </ol>
+  </aside>
+
+  <main class="doc-body">
+
+    <section id="gereksinimler">
+      <h2><span class="n">1</span>Gereksinimler</h2>
+      <ul>
+        <li><strong>WordPress 7.0 veya 7.1</strong>, PHP 7.4 ya da üstü.</li>
+        <li><strong>Sanal Santral SMS eklentisi</strong> kurulu, etkin ve <a href="sanalsantral-sms-kurulum.html#baglanti">hesabı bağlanmış</a> olmalı. OTP kodları aynı hesap ve aynı gönderici başlığıyla gider.</li>
+        <li>Müşteri 2FA'sı için müşterilerin profilinde ya da WooCommerce fatura adresinde Türkiye cep numarası bulunmalı.</li>
+      </ul>
+      <div class="note info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><p>SMS servis bilgileri girilmediği sürece iki adımlı giriş hiçbir kullanıcı için devreye girmez.</p></div>
+    </section>
+
+    <section id="kurulum">
+      <h2><span class="n">2</span>Kurulum</h2>
+      <ol class="steps-list">
+        <li>Önce Sanal Santral SMS eklentisini kurup etkinleştirin.</li>
+        <li><a class="path" href="https://github.com/Sanal-Santral/wordpress-sms-sanalsantral/releases/latest/download/sanalsantral-sms-otp.zip">sanalsantral-sms-otp.zip</a> dosyasını <span class="path">Eklentiler &gt; Yeni Eklenti Ekle &gt; Eklenti Yükle</span> ile yükleyin.</li>
+        <li><strong>Eklentiyi Etkinleştir</strong> deyin. <span class="path">Sanal Santral SMS</span> menüsüne <span class="path">OTP ve 2FA</span> sayfası eklenir.</li>
+      </ol>
+      <p>WordPress, SMS eklentisi etkin değilken bu eklentinin etkinleştirilmesine izin vermez.</p>
+    </section>
+
+    <section id="deneyin">
+      <h2><span class="n">3</span>İlk deneme</h2>
+      <p>Herhangi bir girişi açmadan önce OTP akışını panelden deneyin:</p>
+      <ol class="steps-list">
+        <li><span class="path">Sanal Santral SMS &gt; OTP ve 2FA</span> sayfasının altındaki <strong>Deneyin</strong> bölümüne cep numaranızı yazıp <strong>Kod gönder</strong>'e basın.</li>
+        <li>Telefonunuza gelen kodu <strong>Kod</strong> alanına yazıp <strong>Kodu doğrula</strong> deyin.</li>
+        <li>"Kod doğru. OTP uçtan uca çalışıyor." mesajını gördüyseniz servis, başlık ve kod üretimi hazırdır.</li>
+      </ol>
+    </section>
+
+    <section id="musteri">
+      <h2><span class="n">4</span>Müşteri girişinde 2FA</h2>
+      <ol class="steps-list">
+        <li><span class="path">OTP ve 2FA &gt; İki adımlı giriş</span> bölümünde <strong>Müşterilerden paroladan sonra SMS kodu iste</strong> kutucuğunu işaretleyip kaydedin.</li>
+        <li>Bundan sonra yönetici olmayan ve Türkiye cep numarası kayıtlı her kullanıcı, <code>wp-login.php</code>'den ya da WooCommerce <strong>Hesabım</strong> sayfasından girerken paroladan sonra SMS kodu girer.</li>
+      </ol>
+      <p>Kod, kullanıcının profilindeki <strong>Cep telefonu</strong> alanına, bu alan boşsa WooCommerce <strong>fatura telefonuna</strong> gider. Cep numarası olmayan kullanıcı yalnızca parolasıyla girer.</p>
+      <div class="note warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg><p>Müşterilerin fatura telefonu doğrulanmamış bir bilgidir. Numarasını yanlış yazmış bir müşteri kod alamaz; onu profilinden <strong>muaf tutabilir</strong> ya da numarasını düzeltebilirsiniz.</p></div>
+    </section>
+
+    <section id="yonetici">
+      <h2><span class="n">5</span>Yönetici girişinde 2FA</h2>
+      <p>Yöneticiler (<code>manage_options</code> yetkisi olan kullanıcılar) için ayrı bir kutucuk vardır ve <strong>varsayılan olarak kapalıdır</strong>. Açmak için:</p>
+      <ol class="steps-list">
+        <li><span class="path">OTP ve 2FA</span> sayfasında <strong>Yöneticilerden paroladan sonra SMS kodu iste</strong> kutucuğunu işaretleyip kaydedin.</li>
+        <li>Her yönetici kendi <span class="path">Profil</span> sayfasında <strong>SMS</strong> bölümüne gelip cep numarasını yazar ve <strong>Doğrulama kodu gönder</strong>'e basar.</li>
+        <li>Gelen kodu yazıp <strong>Doğrula</strong> der. Numaranın yanında "SMS ile doğrulandı", altta "Etkin. Giriş kodları … numarasına gider." yazar.</li>
+        <li>Bir sonraki girişinden itibaren bu yöneticiden SMS kodu istenir.</li>
+      </ol>
+      <figure><div class="frame"><img src="assets/screens/otp-profile.webp" alt="Profilde doğrulanmış numara ve etkin iki adımlı giriş" width="2356" height="736" loading="lazy"></div></figure>
+      <p>Numarasını doğrulamamış yöneticiler, kutucuk açık olsa da parolayla girmeye devam eder ve panelde "numaranız doğrulanmadı" uyarısı görür.</p>
+    </section>
+
+    <section id="kilitlenme">
+      <h2><span class="n">6</span>Kilitlenme önlemleri</h2>
+      <p>SMS'i alamayan bir yönetici (hatalı numara, serviste kredi bitmesi, servis kesintisi) panele giremez. Eklenti bu riski şu yollarla azaltır:</p>
+      <div class="table-wrap"><table class="t">
+        <tr><th>Önlem</th><th>Nasıl çalışır</th></tr>
+        <tr><td>Varsayılan kapalı</td><td>Yönetici 2FA'sı ayrı bir kutucukla, bilerek açılır.</td></tr>
+        <tr><td>Doğrulanmış numara şartı</td><td>Kod yalnızca profilinde SMS ile doğrulanmış numaraya gider; numara değişirse doğrulama düşer ve 2FA o yönetici için kapanır.</td></tr>
+        <tr><td>Kullanıcı bazlı muafiyet</td><td>Profildeki <strong>Bu kullanıcıyı SMS ile iki adımlı girişten muaf tut</strong> kutucuğu (yalnızca yöneticiler görür).</td></tr>
+        <tr><td>Servis ayarı yoksa kapalı</td><td>SMS servis bilgileri eksikse 2FA hiç devreye girmez.</td></tr>
+        <tr><td>Acil durum anahtarı</td><td>Panele hiç girilemiyorsa aşağıdaki satır tüm 2FA'yı kapatır.</td></tr>
+      </table></div>
+      <p>Acil durumda FTP ya da barındırma panelinden <code>wp-config.php</code> dosyasına, <code>/* That's all, stop editing! */</code> satırının üstüne ekleyin:</p>
+<pre><code>define( <span class="s">'SS_SMS_2FA_DISABLED'</span>, true );</code></pre>
+      <p>Sorunu giderdikten sonra satırı silmeyi unutmayın; satır durdukça <span class="path">OTP ve 2FA</span> sayfasında uyarı görünür.</p>
+    </section>
+
+    <section id="giris">
+      <h2><span class="n">7</span>Giriş akışı</h2>
+      <div class="grid-2">
+        <div>
+          <ol class="steps-list">
+            <li>Kullanıcı adı ve parola her zamanki gibi girilir.</li>
+            <li>Parola doğruysa oturum <strong>açılmaz</strong>; telefona kod gider ve SMS doğrulama sayfası açılır. Sayfada numaranın yalnızca son haneleri görünür.</li>
+            <li>Doğru kodla oturum açılır ve kullanıcı gitmek istediği sayfaya (yöneticiyse panele, müşteriyse Hesabım'a) döner.</li>
+            <li><strong>Yeni kod gönder</strong> bekleme süresi dolunca etkinleşir. <strong>Vazgeç</strong> giriş sayfasına döner.</li>
+          </ol>
+          <p>İzin verilen sayıda hatalı kod girilirse kod geçersiz olur ve parola adımına geri dönülür. Parola adımı 15 dakika geçerlidir.</p>
+        </div>
+        <figure class="narrow" style="margin-top:0"><div class="frame"><img src="assets/screens/otp-login.webp" alt="SMS doğrulama sayfası" width="1040" height="1520" loading="lazy"></div></figure>
+      </div>
+      <div class="note info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><p>2FA'lı hesaplar XML-RPC ve REST API üzerinden <strong>parolayla</strong> giriş yapamaz. Mobil uygulama ya da entegrasyonlar için <span class="path">Profil &gt; Uygulama Parolaları</span>'ndan parola oluşturun; uygulama parolaları SMS adımından etkilenmez.</p></div>
+    </section>
+
+    <section id="ayarlar">
+      <h2><span class="n">8</span>Kod ayarları</h2>
+      <figure><div class="frame"><img src="assets/screens/otp-settings.webp" alt="OTP ve iki adımlı giriş ayarları" width="2316" height="1960" loading="lazy"></div></figure>
+      <div class="table-wrap"><table class="t">
+        <tr><th>Ayar</th><th>Açıklama</th><th>Varsayılan</th></tr>
+        <tr><td>Mesaj</td><td>SMS metni. <code>{code}</code> zorunlu; <code>{site}</code> site adı, <code>{minutes}</code> geçerlilik süresi (dakika).</td><td>{site} doğrulama kodunuz: {code}</td></tr>
+        <tr><td>Kod uzunluğu</td><td>4 ile 8 hane arası.</td><td>6</td></tr>
+        <tr><td>Kod geçerlilik süresi</td><td>Saniye cinsinden.</td><td>300</td></tr>
+        <tr><td>İzin verilen hatalı deneme</td><td>Bu sayıya ulaşınca kod geçersiz olur ve giriş baştan başlar.</td><td>5</td></tr>
+        <tr><td>Yeni kod için bekleme</td><td>İki kod isteği arasındaki en kısa süre (saniye).</td><td>60</td></tr>
+        <tr><td>Numara başına saatlik kod sayısı</td><td>Bir numaraya bir saatte gidebilecek en fazla kod. SMS kredinizi kötüye kullanıma karşı korur. 0 sınırsız.</td><td>5</td></tr>
+      </table></div>
+      <p>Kodlar rastgele üretilir ve tek kullanımlıktır. Veritabanında yalnızca şifrelenmiş özeti tutulur, SMS kayıtlarında içerik "Tek kullanımlık kod (gizli)" olarak görünür.</p>
+    </section>
+
+    <section id="api">
+      <h2><span class="n">9</span>Geliştirici OTP API'si</h2>
+      <p>Bülten kaydı, telefon doğrulama, randevu onayı gibi kendi akışlarınıza SMS doğrulaması eklemek için iki fonksiyon yeterli. Bekleme süresi, saatlik sınır ve deneme hakkı panel ayarlarından gelir.</p>
+<pre><code><span class="c">// 1) Kodu gönder. İkinci parametre kodun neye ait olduğunu belirtir;</span>
+<span class="c">//    doğrularken aynısını kullanın.</span>
+<span class="k">$r</span> = ss_sms_otp_send( <span class="k">$telefon</span>, <span class="s">'bulten-kaydi'</span> );
+if ( is_wp_error( <span class="k">$r</span> ) ) {
+    <span class="c">// otp_cooldown / otp_rate_limited: $r->get_error_data()['retry_after'] saniye bekleyin</span>
+    wp_send_json_error( <span class="k">$r</span>-&gt;get_error_message() );
+}
+
+<span class="c">// 2) Kullanıcının girdiği kodu doğrula. Doğru kod bir kez kullanılabilir.</span>
+<span class="k">$ok</span> = ss_sms_otp_verify( <span class="k">$telefon</span>, <span class="k">$_POST</span>[<span class="s">'kod'</span>], <span class="s">'bulten-kaydi'</span> );
+if ( true === <span class="k">$ok</span> ) {
+    <span class="c">// numara doğrulandı</span>
+}</code></pre>
+      <div class="table-wrap"><table class="t">
+        <tr><th>Hata kodu</th><th>Anlamı</th></tr>
+        <tr><td><code>otp_cooldown</code></td><td>Yeni kod için beklenmesi gereken süre dolmadı (<code>retry_after</code>).</td></tr>
+        <tr><td><code>otp_rate_limited</code></td><td>Numaranın saatlik kod sınırı doldu (<code>retry_after</code>).</td></tr>
+        <tr><td><code>otp_invalid</code></td><td>Kod hatalı; deneme hakkı azaldı.</td></tr>
+        <tr><td><code>otp_expired</code></td><td>Kod yok ya da süresi doldu.</td></tr>
+        <tr><td><code>otp_too_many_attempts</code></td><td>Deneme hakkı bitti, kod geçersiz oldu.</td></tr>
+        <tr><td><code>sms_…</code></td><td>SMS gönderilemedi; SMS eklentisinin <a href="sanalsantral-sms-kurulum.html#kayitlar">hata tipleri</a>.</td></tr>
+      </table></div>
+      <h3>Kancalar</h3>
+      <div class="table-wrap"><table class="t">
+        <tr><th>Kanca</th><th>Tür</th><th>Ne için</th></tr>
+        <tr><td><code>ss_sms_otp_message</code></td><td>filter</td><td>Kod SMS'inin metnini akışa göre değiştirmek</td></tr>
+        <tr><td><code>ss_sms_2fa_phone</code></td><td>filter</td><td>Kodun gideceği numarayı değiştirmek; boş döndürmek o kullanıcı için 2FA'yı kapatır</td></tr>
+        <tr><td><code>ss_sms_2fa_is_admin</code></td><td>filter</td><td>Kimin "yönetici" sayılacağını belirlemek (örneğin mağaza yöneticileri)</td></tr>
+        <tr><td><code>ss_sms_2fa_authenticated</code></td><td>action</td><td>SMS adımı başarıyla tamamlandığında</td></tr>
+      </table></div>
+    </section>
+
+    <section id="sorun">
+      <h2><span class="n">10</span>Sorun giderme</h2>
+      <h3>Kod gelmiyor</h3>
+      <ul>
+        <li><span class="path">Sanal Santral SMS &gt; SMS Kayıtları</span>'nda ilgili satırın durumuna ve hata nedenine bakın.</li>
+        <li><span class="path">OTP ve 2FA &gt; Deneyin</span> ile aynı numaraya kod gönderip servisi test edin.</li>
+        <li>"Lütfen … saniye bekleyin" ya da "çok fazla kod istendi" uyarısı bekleme süresi ve saatlik sınırdan gelir.</li>
+      </ul>
+      <h3>Yönetici kod istenmeden giriyor</h3>
+      <p>Yönetici kutucuğu açık mı, yöneticinin numarası profilde "SMS ile doğrulandı" görünüyor mu, kullanıcı muaf mı, <code>SS_SMS_2FA_DISABLED</code> tanımlı mı kontrol edin. Profilde "SMS ile iki adımlı giriş" satırı nedenini yazar.</p>
+      <h3>Müşteri kod istenmeden giriyor</h3>
+      <p>Müşteri kutucuğu açık mı ve müşterinin profilinde ya da fatura adresinde Türkiye cep numarası var mı bakın. Profilde durum satırı nedenini gösterir.</p>
+      <h3>Mobil uygulama ya da entegrasyon artık giriş yapamıyor</h3>
+      <p>2FA'lı hesaplar API'ye parolayla giremez. Kullanıcı için bir uygulama parolası oluşturup onu kullanın.</p>
+      <h3>Panele hiç girilemiyor</h3>
+      <p><a href="#kilitlenme">Acil durum anahtarını</a> kullanın.</p>
+    </section>
+
+    <section id="kaldirma">
+      <h2><span class="n">11</span>Kaldırma</h2>
+      <p>Eklentiyi devre dışı bırakmak iki adımlı girişi hemen kapatır. Silmek ayarları, doğrulanmış numara işaretlerini, muafiyetleri ve bekleyen kodları kaldırır. Kullanıcıların cep numaraları SMS eklentisine ait olduğu için profillerde kalır.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="top">
+      <div class="about">
+        <a class="logo" href="https://www.sanalsantral.com.tr"><img src="assets/logo-white.svg" alt="Sanal Santral"></a>
+        <p>Sanal Santral Telekomünikasyon Ticaret A.Ş. Bulut santral, SMS, numara ve yapay zeka destekli iletişim çözümleri.</p>
+      </div>
+      <div>
+        <h4>Eklentiler</h4>
+        <ul>
+          <li><a href="sanalsantral-sms.html">SMS Eklentisi</a></li>
+          <li><a href="sanalsantral-sms-otp.html">OTP ve 2FA Eklentisi</a></li>
+          <li><a href="sanalsantral-sms-kurulum.html">SMS Kurulum ve Kullanım</a></li>
+          <li><a href="sanalsantral-sms-otp-kurulum.html">OTP Kurulum ve Kullanım</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:08504410000">0850 441 00 00</a></li>
+          <li><a href="https://wa.me/908504410851" target="_blank" rel="noopener">WhatsApp: 0850 441 08 51</a></li>
+          <li><a href="https://www.sanalsantral.com.tr/sms-hizmeti" target="_blank" rel="noopener">SMS Hizmeti</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>© 2026 Sanal Santral. Tüm hakları saklıdır.</p>
+    </div>
+    <p class="legal">WordPress®, WordPress Foundation'ın; WooCommerce®, Automattic Inc.'in tescilli markasıdır. Sanal Santral'ın WordPress Foundation, Automattic Inc. ya da bu sayfalarda adı geçen diğer ürün ve kuruluşlarla herhangi bir ortaklığı veya bağlantısı yoktur; bu eklentiler onlar tarafından geliştirilmemiş, desteklenmemiş ya da onaylanmamıştır. Bu adlar yalnızca uyumluluğu belirtmek için kullanılmıştır. Örneklerdeki kargo firması adları, numaralar ve takip numaraları temsilidir.</p>
+  </div>
+</footer>
+
+<script>
+/* İçindekiler: görünen bölümü vurgula. */
+(function () {
+  var links = document.querySelectorAll('.toc a');
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        links.forEach(function (a) { a.classList.remove('active'); });
+        if (map[e.target.id]) { map[e.target.id].classList.add('active'); }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('.doc-body > section').forEach(function (s) { io.observe(s); });
+}());
+</script>
+</body>
+</html>

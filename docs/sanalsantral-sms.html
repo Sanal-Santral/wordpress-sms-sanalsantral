@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WordPress SMS Eklentisi | Sanal Santral</title>
+<meta name="description" content="Sanal Santral SMS eklentisi ile WooCommerce sipariş ve kargo SMS'leri, onaylı kampanya gönderimleri ve geliştirici API'si WordPress'te.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="https://www.sanalsantral.com.tr" aria-label="Sanal Santral"><img src="assets/logo.svg" alt="Sanal Santral"></a>
+    <nav class="site-nav">
+      <a href="sanalsantral-sms.html" class="active">SMS Eklentisi</a>
+      <a href="sanalsantral-sms-otp.html">OTP ve 2FA Eklentisi</a>
+      <a href="sanalsantral-sms-kurulum.html">Kurulum Rehberi</a>
+    </nav>
+    <a class="btn btn-orange btn-sm" href="https://satis.sanalsantral.com.tr/home?flow=sms" target="_blank" rel="noopener">Hemen Başla</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <span class="pill"><span class="dot"></span>WordPress ve WooCommerce eklentisi</span>
+      <h1>WORDPRESS<br>İÇİN SMS</h1>
+      <h2>Siparişten kargoya, kampanyadan bilgilendirmeye</h2>
+      <p class="lead">Sanal Santral SMS altyapısını mağazanıza bağlayın. Sipariş durumu, kargo takip numarası ve kampanya mesajları müşterinize kendi başlığınızla, WordPress'ten çıkmadan gitsin.</p>
+      <div class="actions">
+        <a class="btn btn-accent" href="sanalsantral-sms-kurulum.html">Kurulum Rehberi
+          <svg viewBox="0 0 18 12" fill="none"><path d="M1 6H17M17 6L11 1M17 6L11 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-outline" href="https://www.sanalsantral.com.tr/sms-paketleri" target="_blank" rel="noopener">SMS Paketleri</a>
+      </div>
+      <div class="meta">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>WordPress 7.0 ve 7.1</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>WooCommerce HPOS ve blok ödeme</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Türkçe arayüz</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="frame frame-main">
+        <div class="bar"><i></i><i></i><i></i><span>Sanal Santral SMS · SMS Kayıtları</span></div>
+        <img src="assets/screens/core-log.webp" alt="SMS kayıtları ekranı: gönderilen sipariş, kargo ve kampanya SMS'leri" width="2316" height="946">
+      </div>
+      <div class="frame frame-float">
+        <img src="assets/screens/core-order-box.webp" alt="Sipariş ekranındaki SMS kutusu: gönderilen kargo SMS'i ve özel SMS" width="560" height="840">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat"><b>7 durum + kargo</b><span>Her sipariş durumu için ayrı SMS şablonu</span></div>
+    <div class="stat"><b>500'lük paketler</b><span>Toplu gönderimde tek API çağrısı</span></div>
+    <div class="stat"><b>%100 Türkçe</b><span>Panel, şablonlar ve hata mesajları</span></div>
+    <div class="stat"><b>İYS uyumlu</b><span>Onay toplayan kampanya akışı</span></div>
+  </div>
+</div>
+
+<section class="block" id="ozellikler">
+  <div class="container">
+    <div class="section-head">
+      <span class="pill"><span class="dot"></span>Özellikler</span>
+      <h2>Mağazanızın ihtiyaç duyduğu <em>tüm SMS'ler</em> tek eklentide</h2>
+      <p>Bilgilendirme mesajları otomatik gider, kampanyalar sadece onay verenlere ulaşır, her gönderimin sonucu kayıt altında kalır.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <h3>Sipariş durum SMS'i</h3>
+        <p>Sipariş "Hazırlanıyor", "Tamamlandı" ya da "İptal edildi" olduğunda müşteriye kendiliğinden SMS gider.</p>
+        <ul>
+          <li>Her durum için ayrı, düzenlenebilir şablon</li>
+          <li>Ad, sipariş no, tutar, durum gibi değişkenler</li>
+          <li>Her gönderim siparişe not olarak düşer</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 8.38A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
+        <h3>Kargo entegrasyonu SMS'i</h3>
+        <p>Kargo eklentiniz, ERP'niz ya da kargo firması takip numarasını bildirdiği an müşteriye kargo SMS'i gider; elle veri girişi yok.</p>
+        <ul>
+          <li>PHP fonksiyonu, WordPress action'ı veya REST API</li>
+          <li>Aynı takip numarasına ikinci SMS gitmez</li>
+          <li>Takip linki şablonu ve Shipment Tracking uyumu</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+        <h3>Kampanya SMS'i</h3>
+        <p>Onay veren müşterilerinize ya da yapıştırdığınız numara listesine kişiselleştirilmiş toplu SMS gönderin.</p>
+        <ul>
+          <li>Rol filtresi, misafir siparişleri dahil</li>
+          <li><code>{first_name}</code> ile isme özel mesaj</li>
+          <li>Tekrar eden numaraya tek gönderim</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>İYS ve KVKK uyumlu onay</h3>
+        <p>Kampanya SMS'i onayı ödeme sayfasında, Hesabım'da ve profilde toplanır, onayın verildiği an kaydedilir.</p>
+        <ul>
+          <li>Blok ve klasik ödeme sayfası desteği</li>
+          <li>Onaysız misafir siparişleri asla kampanyaya girmez</li>
+          <li>Bilgilendirme mesajları onay gerektirmez</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+        <h3>Akıllı numara tanıma</h3>
+        <p>Müşteri numarayı nasıl yazarsa yazsın doğru biçime çevrilir, gönderilemeyecek numaralar baştan ayıklanır.</p>
+        <ul>
+          <li><code>+90 532…</code>, <code>0532…</code>, <code>0090…</code>, boşluklu ve parantezli</li>
+          <li>Sabit hat ve yurt dışı numaralar nedeniyle raporlanır</li>
+          <li>Tek bozuk numara paketi düşürmez</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></div>
+        <h3>Çift gönderim koruması</h3>
+        <p>Toplu gönderim 500'lük paketlerle yapılır. Servis yanıtı belirsizse mesajlar asla kendiliğinden tekrar gönderilmez.</p>
+        <ul>
+          <li>Reddedilen paket tek tek yeniden denenir</li>
+          <li>Kredi ve başlık hatalarında boşuna deneme yok</li>
+          <li>"İletim durumu bilinmiyor" ayrıca işaretlenir</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 13H8"/><path d="M16 17H8"/><path d="M16 13h-2"/></svg></div>
+        <h3>SMS kayıtları</h3>
+        <p>Gönderilen ve başarısız her mesaj; numara, durum, Türkçe hata nedeni, kaynak ve paket numarasıyla listelenir.</p>
+        <ul>
+          <li>Durum filtresi ve arama</li>
+          <li>Tek kullanımlık kodların içeriği hiç saklanmaz</li>
+          <li>Ayarlanabilir otomatik temizleme</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+        <h3>Karakter ve SMS sayacı</h3>
+        <p>Her mesaj kutusunda kaç karakter ve kaç SMS tutacağı anında görünür, sürpriz maliyet çıkmaz.</p>
+        <ul>
+          <li>GSM (Türkçe alfabe): 160 karakter</li>
+          <li>Unicode: 70 karakter</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></div>
+        <h3>Geliştiriciler için API</h3>
+        <p>Tema ve eklentilerinizden tek satırla SMS gönderin; sonuç ve hata nedeni standart WordPress biçiminde döner.</p>
+        <ul>
+          <li><code>ss_sms_send()</code> ve <code>ss_sms_send_bulk()</code></li>
+          <li>Gönderim ve şablon kancaları</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block white" id="ekranlar">
+  <div class="container">
+    <div class="showcase">
+      <div class="text">
+        <span class="pill"><span class="dot"></span>WooCommerce</span>
+        <h3>Sipariş ve kargo bildirimleri kendiliğinden</h3>
+        <p>Durum değişince şablondaki mesaj müşterinin fatura telefonuna gider. Kargo SMS'i entegrasyonunuzdan gelen takip numarasıyla kendiliğinden çıkar; her SMS sipariş notlarında görünür.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Durum başına şablon:</strong> ödeme bekliyor, hazırlanıyor, beklemede, tamamlandı, iptal, iade, başarısız</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Kargo SMS'i:</strong> takip numarası bir kez bildirilir, müşteriye bir kez gider</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Özel SMS:</strong> o siparişin müşterisine anlık mesaj</span></li>
+        </ul>
+      </div>
+      <div class="shots-stack">
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span>Sipariş SMS'leri</span></div>
+          <img src="assets/screens/core-orders.webp" alt="Sipariş durumlarına göre SMS şablonları" width="2316" height="1520" loading="lazy">
+        </div>
+        <div class="frame">
+          <img src="assets/screens/core-order-notes.webp" alt="Sipariş notlarına düşen SMS kayıtları" width="556" height="518" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="showcase reverse" id="kargo-entegrasyonu">
+      <div class="text">
+        <span class="pill"><span class="dot"></span>Geliştiriciler için</span>
+        <h3>Kargo entegrasyonu SMS'i: tek satır kod</h3>
+        <p>Takip numarası nerede oluşuyorsa oradan bildirin. Eklenti numarayı siparişe yazar, şablondaki mesajı müşteriye gönderir ve siparişe not düşer.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>PHP:</strong> <code>ss_sms_wc_send_shipping( $order_id, [...] )</code></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Action:</strong> <code>do_action( 'ss_sms_wc_shipped', ... )</code>, eklenti kurulu değilse hata vermez</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>REST:</strong> ERP ve kargo firması bildirimleri için uygulama parolasıyla <code>POST</code></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Mükerrer koruma:</strong> yeniden deneyen entegrasyon müşteriye iki kez SMS attırmaz</span></li>
+        </ul>
+        <p style="margin-top:18px"><a class="btn btn-outline btn-sm" href="sanalsantral-sms-kurulum.html#kargo">Entegrasyon rehberi</a></p>
+      </div>
+      <div class="frame">
+        <div class="bar"><i></i><i></i><i></i><span>Sipariş SMS'leri · Geliştiriciler için</span></div>
+        <img src="assets/screens/core-cargo-dev.webp" alt="Kargo entegrasyonu için PHP, action ve REST örnekleri" width="2316" height="880" loading="lazy">
+      </div>
+    </div>
+
+    <div class="showcase">
+      <div class="text">
+        <span class="pill"><span class="dot"></span>Kampanya</span>
+        <h3>Onay veren müşterilere toplu SMS</h3>
+        <p>Ödeme sayfasına eklenen onay kutucuğuyla izin toplayın, kampanyanızı yalnızca bu kitleye ya da kendi listenize gönderin.</p>
+        <div class="frame" style="margin-bottom:18px">
+          <img src="assets/screens/core-checkout-optin.webp" alt="Ödeme sayfasındaki kampanya SMS onay kutucuğu" width="1608" height="186" loading="lazy">
+        </div>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Onay kaydı ve zaman damgası, Hesabım'dan geri alma</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Gönderim sonunda gönderilen ve başarısız sayısı</span></li>
+        </ul>
+      </div>
+      <div class="frame">
+        <div class="bar"><i></i><i></i><i></i><span>Toplu SMS</span></div>
+        <img src="assets/screens/core-bulk.webp" alt="Toplu SMS ekranı: alıcı seçimi ve mesaj" width="2316" height="1426" loading="lazy">
+      </div>
+    </div>
+
+    <div class="showcase reverse">
+      <div class="text">
+        <span class="pill"><span class="dot"></span>Kurulum</span>
+        <h3>Kullanıcı adı ve API anahtarı yeterli</h3>
+        <p>Sanal Santral hesabınızın bilgilerini girin, onaylı SMS başlıklarınızı tek tıkla çekin, test SMS'iyle doğrulayın.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>API anahtarı kaydedildikten sonra ekranda gösterilmez</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Hesapta tek başlık varsa otomatik seçilir</span></li>
+        </ul>
+      </div>
+      <div class="frame">
+        <div class="bar"><i></i><i></i><i></i><span>Sanal Santral SMS · Ayarlar</span></div>
+        <img src="assets/screens/core-settings.webp" alt="Servis bilgileri ve gönderim ayarları" width="2316" height="1640" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="nasil">
+  <div class="container">
+    <div class="section-head">
+      <span class="pill"><span class="dot"></span>3 adımda</span>
+      <h2>Beş dakikada <em>ilk SMS'iniz</em> yolda</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Eklentiyi yükleyin</h3><p>Eklentiler &gt; Yeni Ekle &gt; Eklenti Yükle ile zip dosyasını yükleyip etkinleştirin.</p></div>
+      <div class="step"><h3>Hesabınızı bağlayın</h3><p>Kullanıcı adı ve API anahtarını girin, göndericileri senkronize edip başlığınızı seçin.</p></div>
+      <div class="step"><h3>Göndermeye başlayın</h3><p>Test SMS'i atın, sipariş SMS'lerini açın, ilk kampanyanızı onaylı kitleye gönderin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>WordPress mağazanız Sanal Santral SMS ile konuşsun</h2>
+  <p>SMS paketinizi seçin, eklentiyi kurun; sipariş, kargo ve kampanya mesajlarınız kendi başlığınızla gitsin.</p>
+  <div class="actions">
+    <a class="btn btn-orange" href="https://satis.sanalsantral.com.tr/home?flow=sms" target="_blank" rel="noopener">Hemen Başla →</a>
+    <a class="btn btn-outline" href="sanalsantral-sms-otp.html">SMS ile Güvenli Giriş</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="top">
+      <div class="about">
+        <a class="logo" href="https://www.sanalsantral.com.tr"><img src="assets/logo-white.svg" alt="Sanal Santral"></a>
+        <p>Sanal Santral Telekomünikasyon Ticaret A.Ş. Bulut santral, SMS, numara ve yapay zeka destekli iletişim çözümleri.</p>
+      </div>
+      <div>
+        <h4>Eklentiler</h4>
+        <ul>
+          <li><a href="sanalsantral-sms.html">SMS Eklentisi</a></li>
+          <li><a href="sanalsantral-sms-otp.html">OTP ve 2FA Eklentisi</a></li>
+          <li><a href="sanalsantral-sms-kurulum.html">SMS Kurulum ve Kullanım</a></li>
+          <li><a href="sanalsantral-sms-otp-kurulum.html">OTP Kurulum ve Kullanım</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:08504410000">0850 441 00 00</a></li>
+          <li><a href="https://wa.me/908504410851" target="_blank" rel="noopener">WhatsApp: 0850 441 08 51</a></li>
+          <li><a href="https://www.sanalsantral.com.tr/sms-hizmeti" target="_blank" rel="noopener">SMS Hizmeti</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>© 2026 Sanal Santral. Tüm hakları saklıdır.</p>
+    </div>
+    <p class="legal">WordPress®, WordPress Foundation'ın; WooCommerce®, Automattic Inc.'in tescilli markasıdır. Sanal Santral'ın WordPress Foundation, Automattic Inc. ya da bu sayfalarda adı geçen diğer ürün ve kuruluşlarla herhangi bir ortaklığı veya bağlantısı yoktur; bu eklentiler onlar tarafından geliştirilmemiş, desteklenmemiş ya da onaylanmamıştır. Bu adlar yalnızca uyumluluğu belirtmek için kullanılmıştır. Örneklerdeki kargo firması adları, numaralar ve takip numaraları temsilidir.</p>
+  </div>
+</footer>
+
+</body>
+</html>

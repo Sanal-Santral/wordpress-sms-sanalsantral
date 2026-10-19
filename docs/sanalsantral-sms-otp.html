@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMS ile Güvenli Giriş | Sanal Santral</title>
+<meta name="description" content="Sanal Santral SMS OTP eklentisi: WordPress ve WooCommerce için tek kullanımlık SMS kodu ve iki adımlı giriş, yöneticiler için kilitlenmeye karşı korumalı.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="theme-otp">
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="https://www.sanalsantral.com.tr" aria-label="Sanal Santral"><img src="assets/logo.svg" alt="Sanal Santral"></a>
+    <nav class="site-nav">
+      <a href="sanalsantral-sms.html">SMS Eklentisi</a>
+      <a href="sanalsantral-sms-otp.html" class="active">OTP ve 2FA Eklentisi</a>
+      <a href="sanalsantral-sms-otp-kurulum.html">Kurulum Rehberi</a>
+    </nav>
+    <a class="btn btn-orange btn-sm" href="https://satis.sanalsantral.com.tr/home?flow=sms" target="_blank" rel="noopener">Hemen Başla</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <span class="pill"><span class="dot"></span>WordPress ve WooCommerce eklentisi</span>
+      <h1>SMS İLE<br>GÜVENLİ GİRİŞ</h1>
+      <h2>Parola çalınsa bile ikinci bir engel</h2>
+      <p class="lead">Müşterileriniz ve yöneticileriniz paroladan sonra telefonlarına gelen tek kullanımlık kodla giriş yapar. Kendi formlarınız için de hazır OTP altyapısı.</p>
+      <div class="actions">
+        <a class="btn btn-accent" href="sanalsantral-sms-otp-kurulum.html">Kurulum Rehberi
+          <svg viewBox="0 0 18 12" fill="none"><path d="M1 6H17M17 6L11 1M17 6L11 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-outline" href="#guvenlik">Kilitlenme koruması</a>
+      </div>
+      <div class="meta">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>wp-login.php ve Hesabım girişi</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Yönetici 2FA varsayılan kapalı</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Sanal Santral SMS ile çalışır</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="frame frame-main">
+        <div class="bar"><i></i><i></i><i></i><span>Sanal Santral SMS · OTP ve 2FA</span></div>
+        <img src="assets/screens/otp-settings.webp" alt="OTP ve iki adımlı giriş ayarları" width="2316" height="1960">
+      </div>
+      <div class="frame frame-float left" style="width:36%">
+        <img src="assets/screens/otp-login.webp" alt="Giriş ekranında SMS doğrulama kodu adımı" width="1040" height="1520">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat"><b>6 haneli kod</b><span>Tek kullanımlık, 5 dakika geçerli</span></div>
+    <div class="stat"><b>5 deneme</b><span>Sonra giriş baştan başlar</span></div>
+    <div class="stat"><b>60 sn / 5 kod</b><span>Yeniden gönderme ve saatlik sınır</span></div>
+    <div class="stat"><b>4 katman</b><span>Yönetici kilitlenmesine karşı koruma</span></div>
+  </div>
+</div>
+
+<section class="block" id="akis">
+  <div class="container">
+    <div class="section-head">
+      <span class="pill"><span class="dot"></span>Nasıl çalışır</span>
+      <h2>Parola tek başına <em>yetmez</em></h2>
+      <p>Parola doğru girildiğinde oturum hemen açılmaz. Kod telefona gider, oturum ancak doğru kodla açılır.</p>
+    </div>
+    <div class="flow">
+      <div class="node">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <b>1. Parola</b><span>Kullanıcı her zamanki gibi giriş yapar</span>
+      </div>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="node">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+        <b>2. SMS kodu</b><span>Kayıtlı cep numarasına 6 haneli kod gider</span>
+      </div>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="node">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        <b>3. Güvenli oturum</b><span>Doğru kodla oturum açılır, kullanıcı kaldığı yere döner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block white" id="ozellikler">
+  <div class="container">
+    <div class="section-head">
+      <span class="pill"><span class="dot"></span>Özellikler</span>
+      <h2>Müşteriye kolay, <em>saldırgana zor</em></h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+        <h3>Müşteri girişinde 2FA</h3>
+        <p>WooCommerce Hesabım ve wp-login.php girişinde, paroladan sonra SMS kodu istenir.</p>
+        <ul>
+          <li>Fatura telefonu otomatik kullanılır</li>
+          <li>Numarası olmayan müşteri parolayla girer</li>
+          <li>Giriş sonrası kaldığı sayfaya döner</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></div>
+        <h3>Yönetici 2FA, ayrı anahtarla</h3>
+        <p>Yönetici hesapları için ayrı bir kutucuk vardır ve varsayılan olarak kapalıdır; bilinçli olarak açılır.</p>
+        <ul>
+          <li>Kod yalnızca SMS ile doğrulanmış numaraya</li>
+          <li>Numara değişirse doğrulama düşer</li>
+          <li>Doğrulamayan yöneticiye panelde uyarı</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Profilde numara doğrulama</h3>
+        <p>Kullanıcı profilindeki "Doğrulama kodu gönder" ile numarasını SMS'le kanıtlar; sayfa yenilenmeden tamamlanır.</p>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Kötüye kullanıma karşı limitler</h3>
+        <p>Giriş formu SMS kredinizi tüketmek için kullanılamaz.</p>
+        <ul>
+          <li>Yeni kod için bekleme süresi</li>
+          <li>Numara başına saatlik kod sınırı</li>
+          <li>Hatalı denemede kod geçersiz olur</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg></div>
+        <h3>Kod hiçbir yerde açık durmaz</h3>
+        <p>Kodlar rastgele üretilir, tek kullanımlıktır, veritabanında yalnızca şifrelenmiş özeti tutulur ve SMS kayıtlarında içerik gizlenir.</p>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+        <h3>API girişleri de korunur</h3>
+        <p>2FA'lı hesaplar XML-RPC ve REST üzerinden parolayla giriş yapamaz; makineler için uygulama parolası kullanılır.</p>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+        <h3>Kendi mesajınız</h3>
+        <p>SMS metni, kod uzunluğu (4 ile 8 hane), geçerlilik süresi ve deneme hakkı panelden ayarlanır.</p>
+        <span class="tag">{site} doğrulama kodunuz: {code}</span>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></div>
+        <h3>Formlarınız için OTP API</h3>
+        <p>Bülten kaydı, telefon doğrulama, randevu onayı gibi akışlara iki fonksiyonla SMS doğrulaması ekleyin.</p>
+        <ul>
+          <li><code>ss_sms_otp_send()</code></li>
+          <li><code>ss_sms_otp_verify()</code></li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Panelden deneyin</h3>
+        <p>"Deneyin" bölümünden kendinize kod gönderip doğrulayarak tüm akışı canlıya almadan test edin.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="guvenlik">
+  <div class="container">
+    <div class="showcase">
+      <div class="text">
+        <span class="pill"><span class="dot"></span>Kilitlenme koruması</span>
+        <h3>Yönetici kendi sitesinin dışında kalmasın</h3>
+        <p>SMS ulaşmadığında (hatalı numara, kredi bitmesi, servis kesintisi) yönetici panele giremezse bu bir güvenlik özelliği değil, bir arızadır. Eklenti bunu dört katmanda önler.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Varsayılan kapalı:</strong> yönetici 2FA'sı ayrı bir kutucukla, bilerek açılır</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Doğrulanmış numara şartı:</strong> numarasını SMS ile kanıtlamayan yöneticiden kod istenmez</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Kullanıcı bazlı muafiyet:</strong> tek bir hesabı profilinden muaf tutabilirsiniz</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Acil durum anahtarı:</strong> <code>wp-config.php</code> içine tek satırla tüm 2FA kapanır</span></li>
+        </ul>
+      </div>
+      <div class="frame">
+        <div class="bar"><i></i><i></i><i></i><span>Profil · SMS</span></div>
+        <img src="assets/screens/otp-profile.webp" alt="Profilde SMS ile doğrulanmış numara ve iki adımlı giriş durumu" width="2356" height="736" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Hesaplarınızı bugün SMS ile koruyun</h2>
+  <p>Sanal Santral SMS eklentisinin üzerine kurulur, aynı hesap ve aynı başlıkla çalışır. Kurulum birkaç dakika sürer.</p>
+  <div class="actions">
+    <a class="btn btn-orange" href="https://satis.sanalsantral.com.tr/home?flow=sms" target="_blank" rel="noopener">Hemen Başla →</a>
+    <a class="btn btn-outline" href="sanalsantral-sms-otp-kurulum.html">Kurulum Rehberi</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="top">
+      <div class="about">
+        <a class="logo" href="https://www.sanalsantral.com.tr"><img src="assets/logo-white.svg" alt="Sanal Santral"></a>
+        <p>Sanal Santral Telekomünikasyon Ticaret A.Ş. Bulut santral, SMS, numara ve yapay zeka destekli iletişim çözümleri.</p>
+      </div>
+      <div>
+        <h4>Eklentiler</h4>
+        <ul>
+          <li><a href="sanalsantral-sms.html">SMS Eklentisi</a></li>
+          <li><a href="sanalsantral-sms-otp.html">OTP ve 2FA Eklentisi</a></li>
+          <li><a href="sanalsantral-sms-kurulum.html">SMS Kurulum ve Kullanım</a></li>
+          <li><a href="sanalsantral-sms-otp-kurulum.html">OTP Kurulum ve Kullanım</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:08504410000">0850 441 00 00</a></li>
+          <li><a href="https://wa.me/908504410851" target="_blank" rel="noopener">WhatsApp: 0850 441 08 51</a></li>
+          <li><a href="https://www.sanalsantral.com.tr/sms-hizmeti" target="_blank" rel="noopener">SMS Hizmeti</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>© 2026 Sanal Santral. Tüm hakları saklıdır.</p>
+    </div>
+    <p class="legal">WordPress®, WordPress Foundation'ın; WooCommerce®, Automattic Inc.'in tescilli markasıdır. Sanal Santral'ın WordPress Foundation, Automattic Inc. ya da bu sayfalarda adı geçen diğer ürün ve kuruluşlarla herhangi bir ortaklığı veya bağlantısı yoktur; bu eklentiler onlar tarafından geliştirilmemiş, desteklenmemiş ya da onaylanmamıştır. Bu adlar yalnızca uyumluluğu belirtmek için kullanılmıştır. Örneklerdeki kargo firması adları, numaralar ve takip numaraları temsilidir.</p>
+  </div>
+</footer>
+
+</body>
+</html>
