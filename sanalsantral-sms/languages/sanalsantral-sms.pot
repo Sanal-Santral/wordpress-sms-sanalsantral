@@ -1,0 +1,628 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-20 00:02+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: sanalsantral-sms/includes/class-ss-sms-client.php:86
+msgid "No SMS sender header is configured. Sync the senders and select one."
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-client.php:118
+msgid "The SMS gateway credentials are not configured."
+msgstr ""
+
+#. translators: 1: seconds, 2: transport error
+#: sanalsantral-sms/includes/class-ss-sms-client.php:144
+#, php-format
+msgid "The SMS gateway did not answer within %1$ds: %2$s"
+msgstr ""
+
+#. translators: %s: transport error
+#: sanalsantral-sms/includes/class-ss-sms-client.php:148
+#, php-format
+msgid "Could not reach the SMS gateway: %s"
+msgstr ""
+
+#. translators: 1: HTTP status, 2: response body
+#: sanalsantral-sms/includes/class-ss-sms-client.php:159
+#: sanalsantral-sms/includes/class-ss-sms-client.php:192
+#, php-format
+msgid "The SMS gateway returned HTTP %1$d: %2$s"
+msgstr ""
+
+#. translators: 1: HTTP status, 2: response body
+#: sanalsantral-sms/includes/class-ss-sms-client.php:163
+#, php-format
+msgid "The SMS gateway returned a non-JSON response (HTTP %1$d): %2$s"
+msgstr ""
+
+#. translators: 1: HTTP status, 2: response body
+#: sanalsantral-sms/includes/class-ss-sms-client.php:167
+#, php-format
+msgid "The SMS gateway returned an unexpected payload (HTTP %1$d): %2$s"
+msgstr ""
+
+#. translators: %s: phone number
+#: sanalsantral-sms/includes/class-ss-sms-client.php:212
+#: sanalsantral-sms/includes/class-ss-sms-dispatcher.php:131
+#, php-format
+msgid "Invalid phone number for SMS: %s"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-dispatcher.php:170
+msgid "Delivery state unknown, check the gateway before resending."
+msgstr ""
+
+#: sanalsantral-sms/includes/functions.php:92
+msgid "Missing number"
+msgstr ""
+
+#: sanalsantral-sms/includes/functions.php:93
+msgid "Wrong number format"
+msgstr ""
+
+#: sanalsantral-sms/includes/functions.php:94
+msgid "Country not supported"
+msgstr ""
+
+#: sanalsantral-sms/includes/functions.php:95
+msgid "Insufficient credit"
+msgstr ""
+
+#: sanalsantral-sms/includes/functions.php:96
+msgid "Account or sender problem"
+msgstr ""
+
+#: sanalsantral-sms/includes/functions.php:97
+msgid "Duplicate message"
+msgstr ""
+
+#: sanalsantral-sms/includes/functions.php:98
+msgid "Gateway error"
+msgstr ""
+
+#: sanalsantral-sms/includes/functions.php:99
+msgid "Unknown error"
+msgstr ""
+
+#: sanalsantral-sms/includes/functions.php:140
+msgid "WooCommerce is not active."
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-users.php:41
+#: sanalsantral-sms/includes/class-ss-sms-users.php:130
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:398
+msgid "SMS"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-users.php:44
+#: sanalsantral-sms/includes/class-ss-sms-users.php:132
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:226
+msgid "Mobile phone"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-users.php:47
+msgid ""
+"Turkish mobile number used for SMS. When empty, the WooCommerce billing "
+"phone is used."
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-users.php:52
+msgid "Campaign SMS"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-users.php:54
+#: sanalsantral-sms/includes/class-ss-sms-users.php:138
+#: sanalsantral-sms/includes/class-ss-sms-users.php:167
+#: sanalsantral-sms/includes/class-ss-sms-users.php:187
+msgid "I agree to receive campaign and promotion messages by SMS."
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-users.php:66
+msgid ""
+"<strong>Error:</strong> The mobile phone must be a Turkish mobile number "
+"(05XX XXX XX XX)."
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-users.php:150
+msgid "The mobile phone must be a Turkish mobile number (05XX XXX XX XX)."
+msgstr ""
+
+#. translators: SMS template; keep the {placeholders}.
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:48
+msgid "Hello {first_name}, order {order_number} is awaiting payment. {site}"
+msgstr ""
+
+#. translators: SMS template; keep the {placeholders}.
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:50
+msgid ""
+"Hello {first_name}, we received order {order_number} and are preparing it. "
+"{site}"
+msgstr ""
+
+#. translators: SMS template; keep the {placeholders}.
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:52
+msgid "Order {order_number} is on hold. We will be in touch shortly. {site}"
+msgstr ""
+
+#. translators: SMS template; keep the {placeholders}.
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:54
+msgid ""
+"Order {order_number} is complete. Thank you for shopping with us! {site}"
+msgstr ""
+
+#. translators: SMS template; keep the {placeholders}.
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:56
+msgid "Order {order_number} has been cancelled. {site}"
+msgstr ""
+
+#. translators: SMS template; keep the {placeholders}.
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:58
+msgid "Order {order_number} has been refunded. {site}"
+msgstr ""
+
+#. translators: SMS template; keep the {placeholders}.
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:60
+msgid "Payment for order {order_number} failed. {site}"
+msgstr ""
+
+#. translators: SMS template; keep the {placeholders}.
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:62
+msgid ""
+"Order {order_number} has been shipped with {carrier}. Tracking number: "
+"{tracking_number} {tracking_url}"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:164
+msgid "Order not found."
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:168
+msgid "A tracking number is required for the shipping SMS."
+msgstr ""
+
+#. translators: %s: tracking number
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:174
+#, php-format
+msgid "The shipping SMS for tracking number %s was already sent."
+msgstr ""
+
+#. translators: 1: error, 2: phone number
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:308
+#, php-format
+msgid "SMS could not be sent to %2$s: %1$s"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:308
+msgid "no number"
+msgstr ""
+
+#. translators: 1: phone number, 2: message
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:311
+#, php-format
+msgid "SMS sent to %1$s: %2$s"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:412
+msgid "Customer phone:"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:413
+msgid "not set"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:415
+msgid "Not a Turkish mobile number; SMS cannot be sent."
+msgstr ""
+
+#. translators: 1: carrier, 2: tracking number, 3: date
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:424
+#, php-format
+msgid "Shipping SMS sent: %1$s, %2$s (%3$s)"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:433
+msgid "Custom SMS"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:437
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:333
+msgid "Send SMS"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:439
+msgid ""
+"Placeholders: {first_name}, {order_number}, {order_status}, {order_total}, "
+"{carrier}, {tracking_number}, {tracking_url}, {site}"
+msgstr ""
+
+#. translators: %s: error
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:462
+#, php-format
+msgid "SMS could not be sent: %s"
+msgstr ""
+
+#: sanalsantral-sms/includes/class-ss-sms-woocommerce.php:464
+msgid "SMS sent."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:27
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:118
+msgid "Sanal Santral SMS"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:28
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:37
+msgid "Settings"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:29
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:288
+msgid "Bulk SMS"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:31
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:433
+msgid "Order SMS"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:33
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:517
+msgid "SMS Log"
+msgstr ""
+
+#. translators: 1: characters, 2: SMS parts
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:56
+#, php-format
+msgid "%1$d characters · %2$d SMS"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:103
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:123
+msgid "Gateway credentials"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:126
+msgid "API endpoint"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:130
+msgid "Username"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:134
+msgid "API key (token)"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:136
+msgid "Saved. Leave empty to keep it."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:140
+msgid "Sender header"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:144
+msgid "Select"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:158
+msgid ""
+"Save the credentials, then use \"Sync senders\" below to load the headers "
+"approved on your account."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:163
+msgid "Sending"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:166
+msgid "Message encoding"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:169
+msgid "GSM (Turkish alphabet), 160 characters per SMS"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:170
+msgid "Unicode (UCS-2), 70 characters per SMS"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:175
+msgid "Bulk batch size"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:178
+msgid ""
+"How many messages go into a single gateway call. Lower it if the gateway "
+"rejects large packages."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:182
+msgid "Rejected batches"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:184
+msgid "Retry rejected batches one message at a time"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:185
+msgid ""
+"Only runs when the gateway accepted nothing from the package, so no message "
+"can be delivered twice."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:189
+msgid "API timeout (seconds)"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:193
+msgid "Keep log for (days)"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:196
+msgid "0 keeps the log forever."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:204
+msgid "Sender headers"
+msgstr ""
+
+#. translators: %s: comma-separated sender headers
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:209
+#, php-format
+msgid "Available: %s"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:216
+msgid "Sync senders"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:220
+msgid "Send a test SMS"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:230
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:324
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:459
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:537
+msgid "Message"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:232
+msgid "Test message from Sanal Santral SMS."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:236
+msgid "Send test SMS"
+msgstr ""
+
+#. translators: %s: error
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:248
+#, php-format
+msgid "Could not sync senders: %s"
+msgstr ""
+
+#. translators: %d: number of senders
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:260
+#, php-format
+msgid "%d sender header synced."
+msgid_plural "%d sender headers synced."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: error
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:271
+#, php-format
+msgid "Test SMS failed: %s"
+msgstr ""
+
+#. translators: %s: phone number
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:274
+#, php-format
+msgid "Test SMS sent to %s."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:290
+msgid ""
+"Commercial (campaign) SMS may only be sent to people who gave consent, and "
+"the sender must be registered with İYS (İleti Yönetim Sistemi). "
+"Informational messages such as order and shipping updates do not need "
+"consent."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:297
+msgid "Recipients"
+msgstr ""
+
+#. translators: %d: number of people
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:303
+#, php-format
+msgid "Everyone who agreed to campaign SMS (%d people)"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:307
+msgid "Only this role:"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:309
+msgid "All (including guest orders)"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:315
+msgid "These numbers:"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:318
+msgid ""
+"One number per line (commas and semicolons also work). Duplicates are sent "
+"once."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:327
+msgid ""
+"Placeholders: {first_name}, {last_name}, {site}. Unknown names become empty."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:337
+msgid "Send this message to all selected recipients?"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:351
+msgid "The message is empty."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:380
+msgid "No valid recipients."
+msgstr ""
+
+#. translators: 1: sent count, 2: failed count
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:403
+#, php-format
+msgid "Bulk SMS finished: %1$d sent, %2$d failed."
+msgstr ""
+
+#. translators: %d: number of skipped lines
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:406
+#, php-format
+msgid "%d line was not a valid number and was skipped."
+msgid_plural "%d lines were not valid numbers and were skipped."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: error
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:417
+#, php-format
+msgid "First error: %s"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:439
+msgid "Status SMS"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:440
+msgid "Text the customer when an order moves to one of the statuses below"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:455
+msgid "Shipping (cargo) SMS"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:456
+msgid ""
+"Sent when your cargo integration reports a tracking number (see \"For "
+"developers\" below), once per tracking number."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:463
+msgid "Default carrier"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:467
+msgid "Tracking URL"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:470
+msgid ""
+"Used for {tracking_url} when the integration sends no link; "
+"{tracking_number} is replaced with the order's tracking number."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:476
+msgid "For developers: cargo integration"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:477
+msgid ""
+"Your cargo plugin, ERP or carrier webhook reports the tracking number in one "
+"of three ways:"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:480
+msgid "Action (no dependency on this plugin)"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:486
+msgid ""
+"Authenticate with an application password of a user who can edit orders "
+"(Users > Profile > Application Passwords). The same tracking number is never "
+"texted twice unless \"force\": true is sent."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:488
+msgid ""
+"Placeholders: {first_name}, {last_name}, {order_number}, {order_status}, "
+"{order_total}, {order_url}, {carrier}, {tracking_number}, {tracking_url}, "
+"{site}"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:519
+msgid "All"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:520
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:553
+msgid "Sent"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:521
+msgid "Failed"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:528
+msgid "Number, error or source"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:529
+msgid "Search"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:534
+msgid "Date"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:535
+msgid "Number"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:536
+msgid "Status"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:538
+msgid "Source"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:539
+msgid "Sender"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:540
+msgid "Package"
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:545
+msgid "No SMS yet."
+msgstr ""
+
+#: sanalsantral-sms/admin/class-ss-sms-admin.php:559
+msgid "One-time code (hidden)"
+msgstr ""
