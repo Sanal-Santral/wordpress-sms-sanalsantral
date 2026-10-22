@@ -12,6 +12,18 @@ echo "[setup] waiting for WordPress files and the database..."
 until [ -f wp-config.php ] && [ -f wp-includes/version.php ]; do sleep 2; done
 until php -r 'exit(@mysqli_connect(getenv("WORDPRESS_DB_HOST"), getenv("WORDPRESS_DB_USER"), getenv("WORDPRESS_DB_PASSWORD"), getenv("WORDPRESS_DB_NAME")) ? 0 : 1);'; do sleep 2; done
 
+# Pin the WordPress major when the image ships a newer one (see docker-compose.yml).
+if [ -n "${WP_CORE_VERSION:-}" ]; then
+	case "$(wp core version)" in
+		"$WP_CORE_VERSION"|"$WP_CORE_VERSION".*) ;;
+		*)
+			echo "[setup] pinning WordPress to $WP_CORE_VERSION"
+			WP_CLI_PHP_ARGS="-d memory_limit=512M" wp core download --version="$WP_CORE_VERSION" --force --skip-content
+			wp core is-installed 2>/dev/null && wp core update --minor || true
+			;;
+	esac
+fi
+
 if ! wp core is-installed 2>/dev/null; then
 	echo "[setup] installing WordPress $(wp core version)"
 	wp core install --url="$SITE_URL" --title="$SITE_TITLE" \
