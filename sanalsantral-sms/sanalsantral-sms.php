@@ -3,7 +3,7 @@
  * Plugin Name:       Sanal Santral SMS
  * Plugin URI:        https://www.sanalsantral.com.tr
  * Description:       Sanal Santral SMS gateway for WordPress: order and shipping SMS for WooCommerce, bulk campaign SMS and an SMS API for other plugins.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 7.0
  * Tested up to:      7.1
  * Requires PHP:      7.4
@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SS_SMS_VERSION', '1.0.0' );
+define( 'SS_SMS_VERSION', '1.0.1' );
 define( 'SS_SMS_FILE', __FILE__ );
 define( 'SS_SMS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SS_SMS_URL', plugin_dir_url( __FILE__ ) );

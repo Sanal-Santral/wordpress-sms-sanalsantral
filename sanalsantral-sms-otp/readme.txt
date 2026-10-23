@@ -5,7 +5,7 @@ Requires at least: 7.0
 Tested up to: 7.1
 Requires PHP: 7.4
 Requires Plugins: sanalsantral-sms
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,10 +82,16 @@ Accounts under SMS two-step login cannot use their password for XML-RPC or REST.
 
 == Changelog ==
 
+= 1.0.1 =
+* Maintenance release, no functional changes. Demo environment now runs on patched PHP 8.3.36 and binds to localhost.
+
 = 1.0.0 =
 * First release: one-time codes, SMS two-step login for customers and administrators, profile number verification, OTP API, Turkish translation.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Maintenance release, no functional changes.
 
 = 1.0.0 =
 First release.

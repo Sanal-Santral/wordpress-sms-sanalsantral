@@ -3,7 +3,7 @@
  * Plugin Name:       Sanal Santral SMS OTP
  * Plugin URI:        https://www.sanalsantral.com.tr
  * Description:       One-time codes and SMS two-step login for WordPress and WooCommerce customers, with an opt-in, lock-out-safe mode for administrators.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 7.0
  * Tested up to:      7.1
  * Requires PHP:      7.4
@@ -19,7 +19,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SS_SMS_OTP_VERSION', '1.0.0' );
+define( 'SS_SMS_OTP_VERSION', '1.0.1' );
 define( 'SS_SMS_OTP_FILE', __FILE__ );
 define( 'SS_SMS_OTP_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SS_SMS_OTP_URL', plugin_dir_url( __FILE__ ) );

@@ -4,7 +4,7 @@ Tags: sms, woocommerce, order notification, shipping, bulk sms
 Requires at least: 7.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,10 +113,16 @@ Call `ss_sms_wc_send_shipping()` or fire the `ss_sms_wc_shipped` action where th
 
 == Changelog ==
 
+= 1.0.1 =
+* Maintenance release, no functional changes. Demo environment now runs on patched PHP 8.3.36 and binds to localhost.
+
 = 1.0.0 =
 * First release: gateway settings and sender sync, WooCommerce order and shipping SMS, consent-based bulk SMS, SMS log, developer API, Turkish translation.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Maintenance release, no functional changes.
 
 = 1.0.0 =
 First release.
